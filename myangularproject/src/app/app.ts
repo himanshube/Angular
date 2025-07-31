@@ -9,4 +9,7 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('myangularproject');
+  inputValue: string = 'Hello';
+  isDisabled: boolean = false;
+  imgsrc:string ="/assets/Angular.jpg";
 }
