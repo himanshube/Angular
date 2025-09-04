@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  name:string = "This is static data binding";
   title = 'myAngularProject';
   variable="sdsad";
 
