@@ -2,6 +2,14 @@ import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
+
+interface empinterface{
+  id:number;
+  name:string;
+  role:string;
+
+}
+
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet,CommonModule],
@@ -18,4 +26,10 @@ export class App {
   ]; 
   
   items : string []=['apple','bababa'];
+
+  employees = signal<empinterface[]>([
+    {id:1,name:'Alice',role:'Developer'},
+    {id:2,name:'Bob',role:'Designer'},
+    {id:3,name:'Charlie',role:'Manager'}
+  ]);   
 }
