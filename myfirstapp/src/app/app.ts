@@ -1,6 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 
 interface empinterface{
@@ -12,7 +13,7 @@ interface empinterface{
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,CommonModule],
+  imports: [RouterOutlet,CommonModule,FormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -24,6 +25,7 @@ export class App {
     {name:'NodeJS',type:'Backend'},
     {name:'MongoDB',type:'Database'}
   ]; 
+
   
   items : string []=['apple','bababa'];
 
@@ -32,4 +34,10 @@ export class App {
     {id:2,name:'Bob',role:'Designer'},
     {id:3,name:'Charlie',role:'Manager'}
   ]);   
+  age : number = 10;
+  checkeligible()
+  {
+   console.log(this.age);
+  }
+
 }

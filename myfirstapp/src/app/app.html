@@ -1,4 +1,4 @@
-<h1>dsadsa</h1>
+<!-- <h1>dsadsa</h1>
 
 @if(display){
   <h2>Showo </h2>
@@ -50,4 +50,21 @@
 </table>
 
 </div>
+
+<div [ngSwitch]="age">
+  <p *ngSwitchCase="10"> pewewqe</p>
+</div> -->
+
+<div>
+  <label>Enter age</label>
+  <input type="text" (input)="checkeligible()"  [(ngModel)]="age"/>
+  {{age}}
+  
+</div>
+
+<ng-template #test>
+  <h1>dsadsadsdsdsdas</h1>
+</ng-template>
+
+<ng-container  *ngTemplateOutlet="test"></ng-container>
 
