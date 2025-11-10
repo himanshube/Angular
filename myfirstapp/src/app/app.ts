@@ -2,6 +2,7 @@ import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import {Child as childcomponent} from './child/child';
 
 
 interface empinterface{
@@ -13,13 +14,15 @@ interface empinterface{
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,CommonModule,FormsModule],
+  imports: [CommonModule,FormsModule,childcomponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
   protected readonly title = signal('myfirstapp');
   display:boolean=true;
+  displaystring : string = "parent dsadasdsadasdas";
+
   fullstack=[
     {name:'Angular',type:'Frontend'},
     {name:'NodeJS',type:'Backend'},
@@ -39,5 +42,13 @@ export class App {
   {
    console.log(this.age);
   }
+
+  message : string = '';
+
+  ReceivedChildEvent(event: string){
+    this.message=event;
+
+  }
+
 
 }
