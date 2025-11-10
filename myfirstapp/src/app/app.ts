@@ -2,7 +2,7 @@ import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import {Child as childcomponent} from './child/child';
+import {Child} from './child/child';
 
 
 interface empinterface{
@@ -14,7 +14,7 @@ interface empinterface{
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule,FormsModule],
+  imports: [CommonModule, FormsModule, Child],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -50,5 +50,12 @@ export class App {
 
   }
 
+
+  itemsArr : string[]=['item1','item2','item3'];  
+
+  addItem(){
+    const newintem = 'item' + (this.itemsArr.length + 1);
+    this.itemsArr.push(newintem);
+  }
 
 }
