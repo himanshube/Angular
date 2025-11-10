@@ -14,7 +14,7 @@ interface empinterface{
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule,FormsModule,childcomponent],
+  imports: [CommonModule,FormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

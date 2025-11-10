@@ -10,12 +10,6 @@ import { emit } from 'process';
   styleUrl: './child.css',
 })
 export class Child {
-  @Input() receivedisplay : string = "";
-
-  @Output() childevent = new EventEmitter();
-
-  emitevent(){
-    // this.childevent.emit("Hello from Child Component");
-  }
+ 
 
 }
