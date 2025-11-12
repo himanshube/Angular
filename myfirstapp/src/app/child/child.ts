@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { Input } from '@angular/core';
 import EventEmitter from 'events';
 import { emit } from 'process';
-
 @Component({
   selector: 'app-child',
   imports: [CommonModule],
@@ -12,11 +11,15 @@ import { emit } from 'process';
 })
 
 export class Child {
-
   @Input() items: string []=[];
   //@Output() itemdeleted=new EventEmitter<string>();
   DeleteItem(index : number)
   {
   //  this.itemdeleted.emit(index);
+  }
+  count : number=0;
+  IncrementCount()
+  {
+    this.count++;
   }
 }

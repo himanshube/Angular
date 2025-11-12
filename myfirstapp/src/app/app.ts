@@ -1,9 +1,8 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal,ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {Child} from './child/child';
-
 
 interface empinterface{
   id:number;
@@ -19,6 +18,7 @@ interface empinterface{
   styleUrl: './app.css'
 })
 export class App {
+
   protected readonly title = signal('myfirstapp');
   display:boolean=true;
   displaystring : string = "parent dsadasdsadasdas";
@@ -58,4 +58,15 @@ export class App {
     this.itemsArr.push(newintem);
   }
 
+  @ViewChild(Child) childcomponent? : Child;
+  
+  incrChildCounter()
+  {
+    console.log(this.childcomponent);
+    this.childcomponent?.IncrementCount()
+  }
+
+
 }
+
+
