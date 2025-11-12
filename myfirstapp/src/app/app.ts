@@ -1,4 +1,4 @@
-import { Component, signal,ViewChild } from '@angular/core';
+import { Component, ElementRef, signal,ViewChild,HostBinding, HostListener } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -66,6 +66,13 @@ export class App {
     this.childcomponent?.IncrementCount()
   }
 
+    @ViewChild('colorInput') colorInput!: ElementRef;
+    @HostBinding('style.backgroundColor') selectedcolor!:string;
+
+    @HostListener('input',['$any($event.target).value']) onColorChange(color:string)
+    {
+    this.selectedcolor=color;
+    }
 
 }
 
