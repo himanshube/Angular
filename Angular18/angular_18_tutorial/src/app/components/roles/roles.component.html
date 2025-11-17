@@ -1,1 +1,50 @@
 <p>roles works!</p>
+<div class="row">
+    <div class ="col-3">
+        <p>{{fisrtname}}</p>
+    </div>
+       <div class ="col-3">
+        <p>{{version}}</p>
+    </div>
+
+       <div class ="col-3">
+        <p>{{currentdate}}</p>
+    </div>
+      <div class ="col-3">
+        <p>{{selectedstate}}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <input type = "text" [value]="fisrtname" class="form-control"/>
+
+    </div>
+     <div class="col-3">      
+         <input type = "text" [(ngModel)]="fisrtname"  />
+    </div>
+     <div class="col-3">
+      
+         <input [type] = "inputtype"  />
+    </div>
+      <div class="col-3">      
+       <select  [(ngModel)]="selectedstate">
+           <option value="A"   >A </option>
+           <option value="B">B </option>
+          <option value="C">C </option>
+            </select>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class ="col-3">
+    <button class="btn btn-success" (click)="showWelcomeMessage()" > Show Alert</button>
+    </div>
+
+       <div class ="col-3">
+    <button class="btn btn-success" (click)="showmessage('love')" > Show Alert</button>
+    </div>
+    
+</div>
+
+
