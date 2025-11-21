@@ -14,8 +14,6 @@ export class DesignationComponent implements OnInit {
 
   ngOnInit(): void {
     this.masterservice.getdesignations().subscribe((res:any)=>{
-
-
     });    
   }
 
