@@ -6,3 +6,19 @@
 
 <h1 (dragover)="increment('sdsa')"> incerment - {{counter}} </h1>
 
+<input type="text" (keyup)="onkeypress($event)">
+<input type="text"  [(ngModel)] ="staticstring">
+{{staticstring}}
+
+<br>
+
+<input type="number" [(ngModel)]="quantity" *ngIf="display" >
+{{quantity*itemperquantuyy}}
+
+@if(!display){
+    <h1>sdsds</h1>
+}
+@else {
+<h1>sdsdssdsadsa</h1>
+}
+
