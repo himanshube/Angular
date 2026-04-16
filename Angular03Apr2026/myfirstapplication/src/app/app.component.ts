@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { TestComponent } from "./test/test.component";
+import { TestComponent } from './test/test.component';
 
 @Component({
   selector: 'app-root',
@@ -10,5 +10,17 @@ import { TestComponent } from "./test/test.component";
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'myangularproject1';
+  title = 'myfirstapplication';
+  msg="India is best";
+  counter:number =0;
+
+   increment(str :string)
+  {
+    str=="in"?this.counter++:this.counter--;
+   
+  }
+  decrement()
+  {
+    this.counter--;
+  }
 }
