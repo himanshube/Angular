@@ -13,26 +13,24 @@ import { CommonModule } from '@angular/common';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-display:boolean=true;
-quantity:number =1;
-itemperquantuyy :number =100;
+users  = [
+  { id: 1, name: "Alice" },
+  { id: 2, name: "Bob" },
+  { id: 3, name: "Charlie" }
+];
 
-  title = 'myfirstapplication';
-  msg="India is best";
-  counter:number =0;
-  staticstring :string ="yjid sdiosa ";
+age:number = 10;
+islegible:boolean=false;
+isauthorized :boolean =true;
 
-   increment(str :string)
-  {
-    str=="in"?this.counter++:this.counter--;
-   
-  }
-  decrement()
-  {
-    this.counter--;
-  }
-  onkeypress(event:any)
-  {
-    console.log(event.target.value)
-  }
+checkeligibility(){
+  
+ if(this.age>=18){
+   this.islegible=true;
+ }else{
+   this.islegible=false;
+ }
+
+}
+
 }

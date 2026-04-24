@@ -1,24 +1,23 @@
-<button (click)="increment('in')">++</button>
-<br>
-<button (click)="increment('de')">--</button>
-<br>
-{{counter}}
+<input type="text" [(ngModel)]="age"  (input)="checkeligibility()"/>
+sdsadasd
+<div [ngSwitch]="islegible">
+    <p *ngSwitchCase="true"> you are eligible</p>
+    <p *ngSwitchCase="false"> you are not eligible</p>
+</div>
+<button>{{islegible?"age is more 10":"Age is more lessthan  10"}}</button>
 
-<h1 (dragover)="increment('sdsa')"> incerment - {{counter}} </h1>
+<p [ngStyle]="{'color': islegible?'maroon':'black'}"  >Example of diretcive</p>
 
-<input type="text" (keyup)="onkeypress($event)">
-<input type="text"  [(ngModel)] ="staticstring">
-{{staticstring}}
+<ng-container *ngIf="isauthorized;else notautthor">
+    <h1>Authorized</h1>    
+</ng-container>
+<ng-template #notautthor>
+<h1>not authorizaed</h1>
+</ng-template>
 
-<br>
 
-<input type="number" [(ngModel)]="quantity" *ngIf="display" >
-{{quantity*itemperquantuyy}}
-
-@if(!display){
-    <h1>sdsds</h1>
-}
-@else {
-<h1>sdsdssdsadsa</h1>
-}
-
+<ng-template #show>
+    <p>himansh Jain </p>
+</ng-template>
+<ng-container *ngTemplateOutlet="show"></ng-container>
+    
