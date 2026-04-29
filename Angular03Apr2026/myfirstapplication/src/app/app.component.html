@@ -1,23 +1,6 @@
-<input type="text" [(ngModel)]="age"  (input)="checkeligibility()"/>
-sdsadasd
-<div [ngSwitch]="islegible">
-    <p *ngSwitchCase="true"> you are eligible</p>
-    <p *ngSwitchCase="false"> you are not eligible</p>
-</div>
-<button>{{islegible?"age is more 10":"Age is more lessthan  10"}}</button>
-
-<p [ngStyle]="{'color': islegible?'maroon':'black'}"  >Example of diretcive</p>
-
-<ng-container *ngIf="isauthorized;else notautthor">
-    <h1>Authorized</h1>    
-</ng-container>
-<ng-template #notautthor>
-<h1>not authorizaed</h1>
-</ng-template>
+<app-child [inputvalue]="parentvalue">
+    <p>sdjsldjsajdslajdslkajl</p>
+</app-child>
 
 
-<ng-template #show>
-    <p>himansh Jain </p>
-</ng-template>
-<ng-container *ngTemplateOutlet="show"></ng-container>
     
