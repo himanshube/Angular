@@ -7,19 +7,8 @@ import { Component,Input,OnInit } from '@angular/core';
   templateUrl: './child.component.html',
   styleUrl: './child.component.css'
 })
-export class ChildComponent implements OnInit {
+export class ChildComponent  {
   @Input() inputvalue :string |undefined;
-
-  ngOnInit(): void {
-
-    console.log("child onit",this.inputvalue)
-    
-  }
-
-  constructor() {
-
-     console.log("Constructoe",this.inputvalue)
-   }
 
 
 }

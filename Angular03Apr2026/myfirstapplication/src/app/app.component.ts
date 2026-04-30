@@ -14,34 +14,15 @@ import {ChildComponent} from './child/child.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit  {
+export class AppComponent   {
 
-  parentvalue :string ="parentvalue";
+  displaystring : string = "hellw";
 
-  ngOnInit():void{
-
-    console.log("App component initializesd");
-
+  update()
+  {
+    this.displaystring="updated";
   }
 
-users  = [
-  { id: 1, name: "Alice" },
-  { id: 2, name: "Bob" },
-  { id: 3, name: "Charlie" }
-];
-
-age:number = 10;
-islegible:boolean=false;
-isauthorized :boolean =true;
-
-checkeligibility(){
   
- if(this.age>=18){
-   this.islegible=true;
- }else{
-   this.islegible=false;
- }
-
-}
 
 }
