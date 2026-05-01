@@ -1,13 +1,8 @@
-<div>
-    <label for="colorpicker"> Select color</label>
-    <input type = "color" id ="colorpicker" #colorinput />
-</div>
-
-<div class="color-box" [style.backgroundColor]="selectedcolor">
-    <h1>app componenet</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-       Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim,
-       eget facilisis urna sapien eu erat. Pellentesque habitant morbi 
-       tristique senectus et netus et malesuada fames ac turpis egestas</p>
-</div>
-<br>
+<router-outlet>
+    <a routerLink="./home">Home component </a>
+      <a routerLink="./about">About component </a>
+        <a routerLink="./contact">Contact component </a>
+          <a routerLink="./news">News component </a>
+            <a routerLink="./services">Services component </a>
+            <a routerLink="./work">Work component </a>
+</router-outlet>
