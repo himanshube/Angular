@@ -1,2 +1,11 @@
-<router-outlet>  
-</router-outlet>
+<h1>employee details </h1>
+
+<ul>
+  @for (employee of employees; track $index) {
+    <li>
+      <strong>{{ employee.name }}</strong> - {{ employee.department }} - {{ employee.location }} - {{ employee.phone }}
+    </li>
+  }
+
+ 
+</ul>
