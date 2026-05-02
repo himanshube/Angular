@@ -6,16 +6,18 @@ import { ServicesComponent } from './services/services.component';
 import { NewsComponent } from './news/news.component';
 import { ContactComponent } from './contact/contact.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { EmployeeComponent } from './employee/employee.component';
 
 
 export const routes: Routes = [
-{path:'home',component :HomeComponent},
-{path:'about',component :AboutComponent},
-{path:'work',component :WorkComponent},
-{path:'services',component :ServicesComponent},
-{path:'news',component :NewsComponent},
-{path:'contact',component :ContactComponent},
-{path:'**', redirectTo:'/home',pathMatch: 'full'}
+{path:'employee/:id',component :EmployeeComponent},
+{path:'home',component :HomeComponent}
+// {path:'about',component :AboutComponent},
+// {path:'work',component :WorkComponent},
+// {path:'services',component :ServicesComponent},
+// {path:'news',component :NewsComponent},
+// {path:'contact',component :ContactComponent},
+// {path:'**', redirectTo:'/home',pathMatch: 'full'}
 
 
 ];
