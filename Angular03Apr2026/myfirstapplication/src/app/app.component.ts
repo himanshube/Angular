@@ -1,36 +1,27 @@
-import { Component, ElementRef, HostBinding, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostBinding, HostListener, inject, OnInit, ViewChild } from '@angular/core';
 import { RouterOutlet,RouterLink } from '@angular/router';
 
 import {FormsModule} from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { EmployeeService } from './dependencies/employee.service';
-
-
-
+import { LogMessage1Service } from './services/log-message1.service';
+import { LogMessage2Service } from './services/log-message2.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,  FormsModule, CommonModule,RouterLink],
+  imports: [  FormsModule, CommonModule],
+  providers: [{provide:LogMessage1Service,useClass:LogMessage1Service},
+    {provide:LogMessage1Service,useClass:LogMessage2Service}],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent   {  
+export class AppComponent implements OnInit{
 
-  employees :any[];
-  empid :number =0;
-  emp:any;
-  
-  constructor(private e : EmployeeService)
-  {
-    this.employees = this.e.getemployees();
+  public logger = inject(LogMessage1Service);  
+  ngOnInit(): void  {
+    this.logger.log();
+
   }
-
-  showdetails(id:number)
-  {
-    this.empid= id;
-    this.emp = this.e.getemployeebyId(id);
-  }
-
 
 }
