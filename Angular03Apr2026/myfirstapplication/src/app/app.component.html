@@ -1,0 +1,13 @@
+
+<form  (ngSubmit)="submitform(myform)" #myform = "ngForm"  > 
+	<div>
+		<label for="username">Username:</label>
+		<input type="text" id="username" name="username" ngModel required #username="ngModel">
+	</div>
+	<div>
+		<label for="password">Password:</label>
+		<input type="password" id="password" name="password" ngModel required #password="ngModel">
+	</div>
+	<button type="submit">Login</button>
+    <button  (click)="resetform(myform)">reset</button>
+</form>

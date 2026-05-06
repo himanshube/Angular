@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { EmployeeService } from './dependencies/employee.service';
 import { LogMessage1Service } from './services/log-message1.service';
 import { LogMessage2Service } from './services/log-message2.service';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -16,12 +17,20 @@ import { LogMessage2Service } from './services/log-message2.service';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit{
+export class AppComponent {
 
-  public logger = inject(LogMessage1Service);  
-  ngOnInit(): void  {
-    this.logger.log();
 
+
+submitform(myform:NgForm){
+  if(myform.valid){
+
+    const formvalue = JSON.stringify(myform.value);
+    console.log(formvalue);
+  }
+}
+
+  resetform(myform:NgForm){
+  myform.reset();
   }
 
 }
