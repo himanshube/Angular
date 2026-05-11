@@ -8,6 +8,7 @@ import { LogMessage1Service } from './services/log-message1.service';
 import { LogMessage2Service } from './services/log-message2.service';
 import {NgForm} from '@angular/forms';
 import { ReactiveFormsModule, FormControl,Validators,FormGroup } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -19,24 +20,24 @@ import { ReactiveFormsModule, FormControl,Validators,FormGroup } from '@angular/
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  myForm : FormGroup;
 
-   constructor() {
-    this.myForm = new FormGroup({
-      name: new FormControl('', Validators.required),
-      email: new FormControl('', [Validators.required, Validators.email]),
-      age: new FormControl('', Validators.min(18)),
+  constructor(){
+    const obervable = new Observable((observer)=>{
+      observer.next("this is next value");
+      observer.error("this is error value");
+
+    }).subscribe({
+      next(value)
+      {
+        console.log("received value: "+ value  )
+      },
+      error(err)
+      {
+        console.log("received error: "+ err  )
+      }
+
     });
   }
-
-   submitForm() {
-    const userAge = this.myForm.get('age')?.value;
-    if (userAge < 18) {
-      alert('Age must be 18 or older');
-      return;
-    } else if (this.myForm.valid) {
-      console.log(this.myForm.value);
-    }
-  }
+  
    
 }
