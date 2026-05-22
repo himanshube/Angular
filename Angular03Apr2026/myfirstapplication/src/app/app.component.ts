@@ -9,6 +9,10 @@ import { LogMessage2Service } from './services/log-message2.service';
 import {NgForm} from '@angular/forms';
 import { ReactiveFormsModule, FormControl,Validators,FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
+import {of} from 'rxjs';
+import {filter} from 'rxjs';
+import { from } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -21,23 +25,50 @@ import { Observable } from 'rxjs';
 })
 export class AppComponent {
 
-  constructor(){
-    const obervable = new Observable((observer)=>{
-      observer.next("this is next value");
-      observer.error("this is error value");
+  response:any;
+  loaddata:boolean =false;
+constructor(private http:HttpClient)
+{ 
 
-    }).subscribe({
-      next(value)
-      {
-        console.log("received value: "+ value  )
-      },
-      error(err)
-      {
-        console.log("received error: "+ err  )
-      }
+}
 
-    });
-  }
-  
+getdata()
+{
+  this.http.get('https://jsonplaceholder.typicode.com/users').subscribe((data)=>{
+   this.response = data;
+   this.loaddata=true;
+  });
+}
+
+postdata()
+{
+ const user =
+  {
+    "id": 3,
+    "name": "Johsdsadasn Doe",
+    "email": "josdsadasdhn.doe@example.com"
+  } 
+
+  this.http.post('http://localhost:3000/users',user).subscribe((data)=>{
+   console.log(data);
+   this.loaddata=true;
+  });
+}
+
+putdata()
+{
+ const user =
+  {
+    "id": 3,
+    "name": "himansh Doe",
+    "email": "dsdsadsadsadsadsadasdas.doe@example.com"
+  } 
+
+  this.http.put('http://localhost:3000/users/'+user.id,user).subscribe((data)=>{
+   console.log(data);
+   this.loaddata=true;
+  });
+}
+
    
 }

@@ -1,1 +1,9 @@
 <h1>dsasdsaddas</h1>
+
+<button (click)="putdata()">Click me</button>
+ @if(loaddata)
+ {
+<ng-container>
+        <pre>{{response | json}}</pre>  
+</ng-container>
+    }
